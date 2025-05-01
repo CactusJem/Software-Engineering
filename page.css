@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #4361ee;
-  --secondary-color: #3a0ca3;
+  --primary-color: rgb(67, 67, 67);
+  --secondary-color: rgb(30, 30, 30);
   --accent-color: #4cc9f0;
   --light-color: #f8f9fa;
-  --dark-color: #212529;
+  --dark-color: rgb(84, 84, 84);
   --success-color: #2ecc71;
   --danger-color: #e74c3c;
   --warning-color: #f39c12;
@@ -11,6 +11,7 @@
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
+
 
 * {
   margin: 0;
@@ -21,8 +22,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: url('../image/login1.jpg') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -30,6 +32,7 @@ body {
   color: var(--dark-color);
   line-height: 1.6;
 }
+
 
 .container {
   width: 100%;
@@ -274,4 +277,27 @@ h4 {
 
 .success-message i {
   font-size: 1.2rem;
+}
+
+.back-home-button {
+  position: fixed;
+  top: 20px; /* or bottom: 20px; for bottom placement */
+  left: 20px;
+  background-color: rgba(67, 67, 67, 0.85);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-home-button i {
+  margin-right: 8px;
+}
+
+.back-home-button:hover {
+  background-color: rgb(30, 30, 30);
+  transform: translateY(-2px);
 }
