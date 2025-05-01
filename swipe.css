@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../image/login1.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.job-swiper-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.job-card {
+    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: grab;
+}
+
+.job-card.swiped-left {
+    transform: translateX(-150%) rotate(-20deg);
+    opacity: 0;
+}
+
+.job-card.swiped-right {
+    transform: translateX(150%) rotate(20deg);
+    opacity: 0;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    background: #e6f2ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #2563eb;
+    margin-right: 10px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.company-name {
+    color: #666;
+    font-size: 14px;
+}
+
+.job-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-dislike {
+    background: #ef4444;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-like {
+    background: #10b981;
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.liked-jobs {
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.liked-job-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.liked-job-logo {
+    width: 40px;
+    height: 40px;
+    background: #e6f2ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #2563eb;
+    margin-right: 10px;
+}
