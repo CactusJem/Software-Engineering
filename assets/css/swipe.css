@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: url('../image/login1.jpg');
+    background: url('image/login1.jpg');
     display: flex;
     justify-content: center;
     align-items: center;

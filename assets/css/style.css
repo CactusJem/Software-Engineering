@@ -22,7 +22,7 @@ body{
     height:100vh;
     overflow-x:hidden;
     color: rgb(84, 84, 84);
-    background: url('../image/login1.jpg');
+    background: url('image/login1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

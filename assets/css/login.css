@@ -8,7 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: url('../image/login1.jpg');
+    background: url('image/login1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
