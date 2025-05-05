@@ -87,6 +87,15 @@
       </form>
     </div>
   </div>
+  <!-- Ai Chat Widget -->
+<div id="chat-widget" style="position:fixed; bottom:20px; right:20px; width:320px; max-height:400px; background:#fff; border:1px solid #ddd; box-shadow: var(--box-shadow); border-radius: var(--border-radius); overflow:hidden; display:flex; flex-direction:column; font-family:'Poppins', sans-serif; z-index:1000;">
+  <div style="background: var(--primary-color); color:white; padding:10px 15px; font-weight:bold;">Chat with AI</div>
+  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; font-size:0.9rem;"></div>
+  <div style="display:flex; border-top:1px solid #eee;">
+    <input type="text" id="chatInput" placeholder="Ask something..." style="flex:1; border:none; padding:10px; font-size:0.9rem;" />
+    <button onclick="sendChat()" style="border:none; background: var(--primary-color); color:white; padding:10px 15px; cursor:pointer;">Send</button>
+  </div>
+</div>
 
   <script src="page.js"></script>
 </body>
