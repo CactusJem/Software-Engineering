@@ -1,4 +1,4 @@
-const backendURL = 'http://cpanel-jamesko.melsa.net.id/api'; // Change to your actual URL
+const backendURL = ''; // Change to your actual URL
 
 // DOM Elements
 const homeScreen = document.getElementById("home");
