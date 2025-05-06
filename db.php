@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "jameskocpanel_user1";
-$pass = "JamesKo208";
-$dbname = "jameskocpanel_database";
+$host = "localhost"; //change if needed 
+$user = "urusername";
+$pass = "urpassword";
+$dbname = "urdatabsename";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
