@@ -39,63 +39,77 @@
       <div id="jobList" class="job-list"></div>
     </div>
 
-    <!-- Employer View -->
+    <!-- Employer Access Verification -->
     <div id="employer" class="hidden card">
-      <button class="btn btn-back" onclick="goHome()">
-        <i class="fas fa-arrow-left"></i> Back
-      </button>
-      <h3>Post a Job</h3>
-      <form id="jobForm" onsubmit="postJob(event)">
-        <div class="form-group">
-          <label for="title">Job Title*</label>
-          <input type="text" id="title" placeholder="e.g., Senior Web Developer" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="description">Job Description*</label>
-          <textarea id="description" placeholder="Detailed job description..." required></textarea>
-        </div>
-        
-        <div class="form-group">
-          <label for="location">Location*</label>
-          <input type="text" id="location" placeholder="e.g., New York, Remote" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="salary">Salary*</label>
-          <input type="text" id="salary" placeholder="e.g., $80,000 - $100,000 per year" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="company">Company Name*</label>
-          <input type="text" id="company" placeholder="Your company name" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="contactNumber">Contact Number*</label>
-          <input type="tel" id="contactNumber" placeholder="+1 (123) 456-7890" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="contactEmail">Contact Email*</label>
-          <input type="email" id="contactEmail" placeholder="hr@yourcompany.com" required />
-        </div>
-        
-        <button type="submit" class="btn btn-primary" id="submitBtn">
-          <i class="fas fa-paper-plane"></i> Submit Job
+      <div id="employerAuth" class="card">
+  <button class="btn btn-back" onclick="goHome()">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+        <h3>Company Verification</h3>
+        <p>Please enter your Company Access Key to post a job.</p>
+        <input type="password" id="accessKey" placeholder="Enter Access Key" />
+        <button class="btn btn-primary" onclick="verifyAccess()">Verify</button>
+        <p id="authError" class="error-message hidden">Invalid access key. Please try again.</p>
+      </div>
+
+      <div id="employerForm" class="hidden">
+        <button class="btn btn-back" onclick="goHome()">
+          <i class="fas fa-arrow-left"></i> Back
         </button>
-      </form>
+        <h3>Post a Job</h3>
+        <form id="jobForm" onsubmit="postJob(event)">
+          <div class="form-group">
+            <label for="title">Job Title*</label>
+            <input type="text" id="title" placeholder="e.g., Senior Web Developer" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Job Description*</label>
+            <textarea id="description" placeholder="Detailed job description..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location*</label>
+            <input type="text" id="location" placeholder="e.g., New York, Remote" required />
+          </div>
+
+          <div class="form-group">
+            <label for="salary">Salary*</label>
+            <input type="text" id="salary" placeholder="e.g., $80,000 - $100,000 per year" required />
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name*</label>
+            <input type="text" id="company" placeholder="Your company name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber">Contact Number*</label>
+            <input type="tel" id="contactNumber" placeholder="+1 (123) 456-7890" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail">Contact Email*</label>
+            <input type="email" id="contactEmail" placeholder="hr@yourcompany.com" required />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Submit Job
+          </button>
+        </form>
+      </div>
     </div>
   </div>
+
   <!-- Ai Chat Widget -->
-<div id="chat-widget" style="position:fixed; bottom:20px; right:20px; width:320px; max-height:400px; background:#fff; border:1px solid #ddd; box-shadow: var(--box-shadow); border-radius: var(--border-radius); overflow:hidden; display:flex; flex-direction:column; font-family:'Poppins', sans-serif; z-index:1000;">
-  <div style="background: var(--primary-color); color:white; padding:10px 15px; font-weight:bold;">Chat with AI</div>
-  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; font-size:0.9rem;"></div>
-  <div style="display:flex; border-top:1px solid #eee;">
-    <input type="text" id="chatInput" placeholder="Ask something..." style="flex:1; border:none; padding:10px; font-size:0.9rem;" />
-    <button onclick="sendChat()" style="border:none; background: var(--primary-color); color:white; padding:10px 15px; cursor:pointer;">Send</button>
+  <div id="chat-widget" style="position:fixed; bottom:20px; right:20px; width:320px; max-height:400px; background:#fff; border:1px solid #ddd; box-shadow: var(--box-shadow); border-radius: var(--border-radius); overflow:hidden; display:flex; flex-direction:column; font-family:'Poppins', sans-serif; z-index:1000;">
+    <div style="background: var(--primary-color); color:white; padding:10px 15px; font-weight:bold;">Chat with AI</div>
+    <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; font-size:0.9rem;"></div>
+    <div style="display:flex; border-top:1px solid #eee;">
+      <input type="text" id="chatInput" placeholder="Ask something..." style="flex:1; border:none; padding:10px; font-size:0.9rem;" />
+      <button onclick="sendChat()" style="border:none; background: var(--primary-color); color:white; padding:10px 15px; cursor:pointer;">Send</button>
+    </div>
   </div>
-</div>
 
   <script src="page.js"></script>
 </body>
