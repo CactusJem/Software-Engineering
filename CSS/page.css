@@ -12,7 +12,7 @@
   --transition: all 0.3s ease;
 }
 
-
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +32,6 @@ body {
   color: var(--dark-color);
   line-height: 1.6;
 }
-
 
 .container {
   width: 100%;
@@ -56,26 +55,12 @@ h1, h2, h3, h4 {
   color: var(--dark-color);
 }
 
-h1 {
-  font-size: 2.5rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-.highlight {
-  color: var(--primary-color);
-}
-
+.highlight { color: var(--primary-color); }
 .subtitle {
   font-size: 1.1rem;
   color: #555;
@@ -135,46 +120,8 @@ h4 {
   flex-wrap: wrap;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
-/* Job List Styles */
-.job-list {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.job-card {
-  background-color: white;
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: var(--box-shadow);
-  border-left: 4px solid var(--primary-color);
-  transition: var(--transition);
-}
-
-.job-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.job-card h4 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.job-card p {
-  margin-bottom: 0.5rem;
-  color: #555;
-}
-
-.job-card strong {
-  color: var(--dark-color);
-}
-
-/* Form Styles */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -208,7 +155,47 @@ h4 {
   box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
 }
 
-/* Loading Spinner */
+/* Job List Styles */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.job-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid #ccc;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.job-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.job-card strong {
+  color: var(--dark-color);
+}
+
 .loading {
   display: flex;
   flex-direction: column;
@@ -231,39 +218,25 @@ h4 {
   to { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .card {
-    padding: 1.5rem;
-  }
-  
-  .button-group {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .card { padding: 1.5rem; }
+  .button-group { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
 }
 
-/* Error Message */
 .error-message {
   color: var(--danger-color);
   background-color: #fdecea;
   padding: 1rem;
   border-radius: var(--border-radius);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin-top: 1rem;
+  display: none;
 }
 
-.error-message i {
-  font-size: 1.2rem;
+.error-message:not(.hidden) {
+  display: block;
 }
 
-/* Success Message */
 .success-message {
   color: var(--success-color);
   background-color: #e8f5e9;
@@ -281,7 +254,7 @@ h4 {
 
 .back-home-button {
   position: fixed;
-  top: 20px; /* or bottom: 20px; for bottom placement */
+  top: 20px;
   left: 20px;
   background-color: rgba(67, 67, 67, 0.85);
   color: white;
@@ -300,4 +273,44 @@ h4 {
 .back-home-button:hover {
   background-color: rgb(30, 30, 30);
   transform: translateY(-2px);
+}
+
+
+/* Enhanced card decoration for verification */
+#employerAuth.card {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 20px rgba(67, 67, 67, 0.25);
+}
+
+/* Style for the verify key input */
+#accessKey {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  transition: var(--transition);
+}
+
+#accessKey:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 67, 67, 0.3);
+}
+
+/* Style the verify button */
+#employerAuth .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+#employerAuth .btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Back button on access verification */
+#employerAuth .btn-back {
+  margin-bottom: 1rem;
+  margin-top: -1rem;
 }
