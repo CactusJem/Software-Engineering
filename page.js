@@ -1,4 +1,4 @@
-const backendURL = 'http://cpanel-jamesko.melsa.net.id/api';
+const backendURL = ''; //update it with your url
 const EMPLOYER_ACCESS_KEY = 'jobsecure2025';
 
 const homeScreen = document.getElementById("home");
