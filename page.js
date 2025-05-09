@@ -1,4 +1,4 @@
-const backendURL = ''; //replace with your url
+const backendURL = 'http://cpanel-jamesko.melsa.net.id/api';
 const EMPLOYER_ACCESS_KEY = 'jobsecure2025';
 
 const homeScreen = document.getElementById("home");
@@ -15,10 +15,14 @@ function showSeeker() {
 }
 
 function showEmployer() {
-  homeScreen.classList.add("hidden");
-  employerScreen.classList.remove("hidden");
-  document.getElementById("employerAuth").classList.remove("hidden");
-  document.getElementById("employerForm").classList.add("hidden");
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('employer').classList.remove('hidden');
+  document.getElementById('employerAuth').classList.remove('hidden');
+  document.getElementById('employerForm').classList.add('hidden');
+
+  // Reset the access key input and error message
+  document.getElementById('accessKey').value = '';
+  document.getElementById('authError').classList.add('hidden');
 }
 
 function verifyAccess() {
